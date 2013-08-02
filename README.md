@@ -1,4 +1,4 @@
-# skeucard-rails
+# skeuocard-rails
 
 Use [skeuocard](http://kenkeiter.com/skeuocard/) with rails 3.1+ asset pipeline.
 
