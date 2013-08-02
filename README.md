@@ -42,6 +42,9 @@ Simply call the card with javascript after implementing the correct html.
   window.card = new Skeuocard($("#skeuocard"));
 ```
 
+Everything is better explained her :
+  https://github.com/kenkeiter/skeuocard
+
 ## Contributing
 
 1. Fork it
