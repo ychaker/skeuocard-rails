@@ -1,5 +1,13 @@
 @import "util";
 
+$image-front-background: image-url('card-front-background.png');
+$image-generic-front: image-url('products/generic-front.png');
+$image-generic-back: image-url('products/generic-back.png');
+
+$card-face-width: 24.8em;
+$card-face-height: 15.6em;
+$sprite-front-height: 93.6em;
+
 // *****************************************************************************
 // Generic card layout
 // *****************************************************************************
@@ -7,8 +15,8 @@
 
   input{
     border: none;
-    @include vendor-prefix(border-radius, 3px);
     outline: none;
+    @include vendor-prefix(border-radius, 3px);
   }
 
   input:focus{
@@ -17,15 +25,22 @@
   }
 
   .face.front {
-    background: #eee url('../images/products/generic-front.png') no-repeat right bottom;
+    background-color: #eee;
+    background-image: image-url('products/generic-front.png'), $image-front-background;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+
   .face.back {
-    background: #eee url('../images/products/generic-back.png') no-repeat center center;
+    background-color: #eee;
+    background-image: image-url('products/generic-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .cc-number{
     position: absolute;
-    display: block; 
+    display: block;
     //left:36px;
     left: 1.8em;
     top: 8.05em;
@@ -50,6 +65,14 @@
 // This is inherited by card products.
 // *****************************************************************************
 .skeuocard.card-product {
+  .face.front{
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+  }
+  .face.back{
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+  }
   .cc-number {
     background-color: transparent;
     padding: 0.1em;
@@ -63,8 +86,8 @@
     }
   }
   .cc-exp {
-    position: absolute; 
-    display: block; 
+    position: absolute;
+    display: block;
     input, .separator {
       margin: 0; padding: 0;
       font-size: 1em;
@@ -79,8 +102,8 @@
   }
   .cc-name {
     margin: 0; padding: 0;
-    position: absolute; 
-    display: block; 
+    position: absolute;
+    display: block;
     font-size: 1em;
     font-family: $cc-field-family;
     background-color: transparent;
@@ -89,8 +112,8 @@
   }
   .cc-cvc {
     margin: 0; padding: 0;
-    position: absolute; 
-    display: block; 
+    position: absolute;
+    display: block;
     font-size: 1em;
     font-family: $cc-label-family;
     background-color: transparent;
@@ -120,14 +143,14 @@
   @extend .skeuocard.card-product;
 
   .face.front{
-    background: #eee url('../images/products/visa-front.png') no-repeat right bottom;
+    background-image: image-url('products/visa-front.png'), $image-front-background;
   }
   .face.back {
-    background: #eee url('../images/products/visa-back.png') no-repeat center center;
+    background-image: image-url('products/visa-back.png'), $image-generic-back;
   }
 
   .cc-number{
-    left: 1.8em; 
+    left: 1.8em;
     top: 8.05em;
   }
 
@@ -151,7 +174,7 @@
   // This card puts all required information on the back, rather than the front.
   &.issuer-chase-sapphire{
     .face.front{
-      background-image: url('../images/issuers/visa-chase-sapphire.png');
+      background-image: image-url('issuers/visa-chase-sapphire.png');
     }
     .cc-name{
       left: 1.25em;
@@ -174,7 +197,7 @@
     }
     .cc-exp{
       left: 3.75em;
-      top: 11.5em; 
+      top: 11.5em;
       input, .separator{
         font-family: $cc-label-family;
         &.group2{ width: 1.6em; }
@@ -187,9 +210,10 @@
 
   }
 
+  /*
   &.issuer-simple{
     .face.front{
-      background-image: url('../images/issuers/visa-simple-front.png');
+      background-image: image-url('issuers/visa-simple-front.png');
     }
     input, .separator {
       color: #eee;
@@ -197,8 +221,8 @@
       text-shadow: 1px 1px 1px #bbb;
       filter: dropshadow(color=#aaa, offx=1, offy=1);
       border: none;
-      @include input-placeholder{ 
-        color: #fff; 
+      @include input-placeholder{
+        color: #fff;
         text-shadow: 1px 1px 1px #ccc;
         filter: dropshadow(color=#ddd, offx=1, offy=1);
       };
@@ -207,6 +231,7 @@
       background-color: transparent;
     }
   }
+  */
 
 }
 
@@ -217,10 +242,10 @@
   @extend .skeuocard.card-product;
 
   .face.front {
-    background: #eee url('../images/products/amex-front.png') no-repeat right bottom;
+    background-image: image-url('products/amex-front.png'), $image-front-background;
   }
   .face.back{
-    background: #eee url('../images/products/visa-back.png') no-repeat center center;
+    background-image: image-url('products/visa-back.png'), $image-generic-back;
   }
 
   .cc-number{
@@ -252,10 +277,10 @@
   @extend .skeuocard.card-product;
 
   .face.front{
-    background: #eee url('../images/products/dinersclubintl-front.png') no-repeat right bottom;
+    background-image: image-url('products/dinersclubintl-front.png'), $image-front-background;
   }
   .face.back{
-    background: #eee url('../images/products/visa-back.png') no-repeat center center;
+    background-image: image-url('products/visa-back.png'), $image-generic-back;
   }
   .cc-number{
     left: 1.8em;
@@ -283,10 +308,10 @@
   @extend .skeuocard.card-product;
 
   .face.front{
-    background: #eee url('../images/products/mastercard-front.png') no-repeat right bottom;
+    background-image: image-url('products/mastercard-front.png'), $image-front-background;
   }
   .face.back{
-    background: #eee url('../images/products/visa-back.png') no-repeat center center;
+    background-image: image-url('products/visa-back.png'), $image-generic-back;
   }
 
   .cc-number{
@@ -318,10 +343,10 @@
   @extend .skeuocard.card-product;
 
   .face.front{
-    background: #eee url('../images/products/discover-front.png') no-repeat right bottom;
+    background-image: image-url('products/discover-front.png'), $image-front-background;
   }
   .face.back{
-    background: #eee url('../images/products/visa-back.png') no-repeat center center;
+    background-image: image-url('products/visa-back.png'), $image-generic-back;
   }
 
   .cc-number{
@@ -343,4 +368,14 @@
     left: 18.1em;
     width: 3em;
   }
+}
+
+/* Preload face images */
+body:after{
+    display:none;
+    content: image-url('products/visa-front.png')
+             image-url('products/amex-front.png')
+             image-url('products/discover-front.png')
+             image-url('products/mastercard-front.png')
+             image-url('products/dinersclubintl-front.png');
 }
