@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.summary     = "Use Skeuocard with Rails 3.1+"
   s.description = "This gem provides Skeuocard for your Rails 3.1 application."
   s.files       = Dir["{lib,vendor}/**/*"] + ["MIT-LICENSE", "Gemfile", "README.md"]
-  s.version     = "1.0.0beta"
+  s.version     = "1.0.0"
   s.license     = 'MIT'
 
   s.add_dependency "railties", ">= 3.1.0"
