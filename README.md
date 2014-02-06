@@ -16,11 +16,17 @@ gem 'skeuocard-rails'
 Then run `bundle install` to update your application's bundle.
 
 Now you need to edit your `app/assets/javascripts/application.js`
-file and add the following line:
+file and add the following:
+
+(NOTE: Various browser hacks in the skeuocard CSS require css_ua.js to function properly. To avoid browser issues, make sure to include it if it is not already included in your project.)
 
 ``` javascript
+//= require css_ua # Omit if already included elsewhere
 //= require skeuocard
 ```
+
+
+``` javascript
 
 And then edit your `app/assets/stylesheets/application.css` file to
 look something like:
