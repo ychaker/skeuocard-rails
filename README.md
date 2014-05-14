@@ -25,9 +25,6 @@ file and add the following:
 //= require skeuocard
 ```
 
-
-``` javascript
-
 And then edit your `app/assets/stylesheets/application.css` file to
 look something like:
 
@@ -45,7 +42,7 @@ look something like:
 Simply call the card with javascript after implementing the correct html.
 
 ``` javascript
-  window.card = new Skeuocard($("#skeuocard"));
+  card = new Skeuocard($("#skeuocard"));
 ```
 
 Everything is better explained her :
